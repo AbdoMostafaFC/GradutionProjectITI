@@ -1,0 +1,34 @@
+.custom-badge .mat-badge-content {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.custom-badge .mat-icon {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+}
+
+a {
+    &.active {
+        color: #1e1c1c;
+    }
+}
+
+.card{
+    color: #987272;
+
+}
+
+
+
+.mat-badge{
+    --mat-badge-background-color: #41a572;
+    --mat-badge-text-color: #e8c35b;
+    --mat-badge-disabled-state-background-color: rgba(0, 221, 221, 0.38);
+    --mat-badge-disabled-state-text-color: #003737;
+}
+
+

@@ -1,0 +1,50 @@
+<div class="form-container">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="product-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput class="small-input" formControlName="name" required />
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput class="small-input" formControlName="description" required></textarea>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Price</mat-label>
+      <input matInput class="small-input" type="number" formControlName="price" required />
+      <mat-error *ngIf="productForm.get('price')?.hasError('min') && productForm.get('price')?.touched">
+        Price must be greater than 0
+      </mat-error>
+      <mat-error *ngIf="productForm.get('price')?.hasError('required') && productForm.get('price')?.touched">
+        Price is required
+      </mat-error>
+    </mat-form-field>
+    
+    <mat-label>Upload Image</mat-label>
+    <input type="file" (change)="onFileSelected($event)" required />
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <input matInput class="small-input" formControlName="type" required />
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Brand</mat-label>
+      <input matInput class="small-input" formControlName="brand" required />
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Quantity in Stock</mat-label>
+      <input matInput class="small-input" type="number" formControlName="quantityInStock" required />
+      <mat-error *ngIf="productForm.get('quantityInStock')?.hasError('min') && productForm.get('quantityInStock')?.touched">
+        Quantity must be greater than 0
+      </mat-error>
+      <mat-error *ngIf="productForm.get('quantityInStock')?.hasError('required') && productForm.get('quantityInStock')?.touched">
+        Quantity is required
+      </mat-error>
+    </mat-form-field>
+    
+    <button mat-raised-button type="submit" color="primary">Create Product</button>
+  </form>
+</div>

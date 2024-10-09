@@ -1,0 +1,24 @@
+<div class="relative w-screen h-screen overflow-hidden">
+   \
+   <div style="width: 90;"><!-- Make the image take full view size -->
+    <img
+        style="width: 90%;"
+        class="absolute inset-0 w-full h-full object-cover"
+        src="../images/back.jpeg"
+        alt="background image"
+    >
+</div> 
+
+    <!-- Center the content over the image -->
+    <div class="flex flex-col items-center justify-center h-full relative z-10 p-8">
+
+        <!-- Set button background to orange and text to black -->
+        <button
+        class="font-semibold text-2xl text-white rounded-2xl px-8 py-4 border-2 border-transparent mt-8"
+        routerLink="/shop"
+        style="background-color: #1f1f1f;"
+    >
+        Shopping Now
+    </button>
+    </div>
+</div>
